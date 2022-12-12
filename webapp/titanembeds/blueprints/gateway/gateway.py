@@ -20,8 +20,7 @@ class Gateway(Namespace):
         authorization = data.get("session", None)
         if authorization:
             try:
-                data = serializer.loads(authorization)
-                session.update(data)
+                data = serializer.loads(session.update(data))
             except:
                 pass
         guild_id = data["guild_id"]
